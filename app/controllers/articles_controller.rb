@@ -13,6 +13,14 @@ class ArticlesController < ApplicationController
   end
 
   def create
+    @article = Article.new(params[:article])
+
+    if @article.save
+      render json: { status: 200, message: "article saved.", data: @article.to_json }
+    else
+      render json: { status: 500, message: "article saved is failed." }
+    end
+
   end
 
   def new
