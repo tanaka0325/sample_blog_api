@@ -23,10 +23,15 @@ class ArticlesController < ApplicationController
 
   end
 
-  def new
-  end
+  def destroy
+    @article = Article.find(params[:id])
+    
+    if @article.destroy
+      render json: { status: 200, message: "id: {@article.id} is deleted." }
+    else
+      render json: { status: 500, message: "id: {@article.id} is not deleted." }
+    end
 
-  def edit
   end
 
 end
