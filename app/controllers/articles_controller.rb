@@ -20,7 +20,6 @@ class ArticlesController < ApplicationController
     else
       render json: { status: 500, message: "article saved is failed." }
     end
-
   end
 
   def destroy
@@ -31,7 +30,6 @@ class ArticlesController < ApplicationController
     else
       render json: { status: 500, message: "id: {@article.id} is not deleted." }
     end
-
   end
 
 end
